@@ -1,0 +1,28 @@
+<% provide(:title, 'ユーザー詳細') %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <%= gravatar_for @user %>
+      <%= @user.name %>
+      <%= render 'follow_form' if current_user %>
+      <% if @user == current_user %>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+      <% end %>
+    </section>
+    <section class="profile-text">
+      <%= simple_format(@user.self_introduction) %>
+    </section>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <% if @user.posts.any? %>
+      <h3>投稿 (<%= @user.posts.count %>件)</h3>
+      <ul class="posts">
+        <%= render @posts %>
+      </ul>
+      <%= will_paginate @posts %>
+    <% end %>
+  </div>
+</div>

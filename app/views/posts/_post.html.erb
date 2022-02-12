@@ -1,0 +1,21 @@
+<div class="card mb-3" id="post-<%= post.id %>" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-6 text-center">
+      <%= link_to(post_path(post)) do %>
+        <%= image_tag post.photos.first.image.url, size: '230x230' %>
+      <% end %>
+    </div>
+    <div class="col-md-6">
+      <div class="card-body">
+        <p class="card-text">
+          <%= simple_format(post.content) %>
+        </p>
+        <p class="card-text">
+          <small class="card-muted">
+            <%= time_ago_in_words(post.created_at).upcase %>前
+          </small>
+        </p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<div class="row justify-content-center">
+  <div class="col-md-6 text-center">
+    <h2>投稿画面</h2>
+    <%= form_with model: @post, class: "upload-images p-0 border-0" do |f| %>
+      <div class="mb-3">
+        <%= f.fields_for :photos do |i| %>
+          <%= i.file_field :image %>
+        <% end %>
+      </div>
+      <div class="row mb-3">
+        <div class="field">
+          <%= f.text_area :content, class: "form-control", placeholder: "説明を記載" %>
+        </div>
+      </div>
+      <%= f.submit "投稿する", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>

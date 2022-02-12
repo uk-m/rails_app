@@ -1,0 +1,22 @@
+.love {
+  background-image: url("heart.png");
+  background-repeat: no-repeat;
+  height: 32px;
+  width: 32px;
+  background-size: 32px !important;
+}
+
+.loved {
+  background-image: url("like.png");
+  background-repeat: no-repeat;
+  height: 32px;
+  width: 32px;
+  background-size: 32px !important;
+}
+
+.hide-text {
+  display: block;
+  overflow: hidden;
+  text-indent: 110%;
+  white-space: nowrap;
+}

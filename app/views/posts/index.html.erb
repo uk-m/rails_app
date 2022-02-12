@@ -1,0 +1,54 @@
+<% provide(:title, "投稿一覧") %>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <% @posts.each do |post| %>
+  <div class="col">
+    <div class="card h-100">
+      <div class="card-header">
+        <%= link_to user_path(post.user), class: "no-text-decoration" do %>
+          <%= gravatar_for(post.user) %>
+        <% end %>
+        <%= link_to user_path(post.user), class: "black-color no-text-decoration",
+          title: post.user.name do %>
+          <strong><%= post.user.name %></strong>
+        <% end %>
+      </div>
+      <%= link_to(post_path(post)) do %>
+        <%= image_tag post.photos.first.image.url(:medium), class: "card-img-top" %>
+      <% end %>
+      <div class="card-body">
+        <p class="card-text"><%= simple_format(post.content) %></p>
+      </div>
+      <div class="list-group list-group-flush">
+        <li class="list-group-item">
+          <span id="like-icon-post-<%= post.id.to_s %>">
+            <% if post.liked_by(current_user).present? %>
+              <%= link_to "いいねを取り消す", post_like_path(post.id, post.liked_by(current_user)), method: :DELETE, remote: true, class: "loved hide-text" %>
+            <% else %>
+              <%= link_to "いいね", post_likes_path(post), method: :POST, remote: true, class: "love hide-text" %>
+            <% end %>
+          </span>
+          <span>
+            <%= link_to post_path(post), class: "comment" do %>
+              <span class="fa-layers fa-fw bg fa-2x">
+                <i class="far fa-comment my-gray"></i>
+                <% if post.comments.any? %>
+                  <span class="fa-layers-counter" style="background: black;"><%= post.comments.count %></span>
+                <% end %>
+              </span>
+            <% end %>
+          </span>
+          <div id="like-text-post-<%= post.id.to_s %>">
+            <%= render "like_text", { likes: post.likes } %>
+          </div>
+        </li>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">
+          <%= time_ago_in_words(post.created_at).upcase + "前" %>
+        </small>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+<%= will_paginate @posts %>

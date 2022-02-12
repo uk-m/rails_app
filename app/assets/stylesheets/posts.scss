@@ -1,0 +1,21 @@
+.no-text-decoration:hover {
+  text-decoration: none;
+}
+
+.black-color {
+  color: #262626;
+}
+
+.delete-item {
+  float: right;
+}
+
+.delete-comment {
+  background-image: url("delete.png");
+  background-repeat: no-repeat;
+  width: 11px;
+  height: 11px;
+  float: right;
+  margin: 5px 0 0 10px;
+  background-size: 11px !important;
+}

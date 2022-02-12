@@ -1,0 +1,25 @@
+<% provide(:title, @title) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <%= gravatar_for @user %>
+      <span><%= link_to @user.name, user_path(@user) %></span>
+      <span><b>投稿数:</b> <%= @user.posts.count %></span>
+    </section>
+    <section class="profile-text">
+      <%= simple_format(@user.self_introduction) %>
+    </section>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <h3><%= @title %></h3>
+    <% if @users.any? %>
+      <ul class="users follow">
+        <%= render @users %>
+      </ul>
+      <%= will_paginate %>
+    <% end %>
+  </div>
+</div>
