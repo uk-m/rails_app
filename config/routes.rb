@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     member do
       get :following, :followers
     end
+    collection do
+      get :search
+    end
   end
   resources :posts, only: %i(index new create show destroy) do
     resources :photos, only: %i(create)

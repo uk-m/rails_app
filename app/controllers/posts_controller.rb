@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i(show destroy)
   
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 8)
+    @posts = Post.page(params[:page]).per(8).order('updated_at DESC')
   end
   
   def new
@@ -23,6 +23,7 @@ class PostsController < ApplicationController
       redirect_to posts_path
       flash[:alert] = "投稿に失敗しました"
     end
+    redirect_to posts_path
   end
   
   def show

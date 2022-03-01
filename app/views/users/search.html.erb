@@ -1,5 +1,5 @@
-<% provide(:title, 'すべてのユーザー') %>
-<h1>すべてのユーザー</h1>
+<% provide(:title, '検索結果') %>
+<h1>検索結果</h1>
 <%= search_form_for @q, url: search_users_path, class: "input-group mb-5" do |f| %>
   <span class="input-group-text">ユーザー名</span>
   <%= f.search_field :name_cont, class: "form-control" %>
@@ -8,5 +8,3 @@
 <ul class="users">
   <%= render @users %>
 </ul>
-
-<%= paginate @users %>
