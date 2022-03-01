@@ -1,24 +1,28 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Name
 
-Things you may want to cover:
+  MonoLog
+  
+# Overview
 
-* Ruby version
+  Purchase introduction services
 
-* System dependencies
+# DEMO
 
-* Configuration
+# Features
 
-* Database creation
+  You can watch everyone purchase.
 
-* Database initialization
+# Usage
 
-* How to run the test suite
+# Requirement
 
-* Services (job queues, cache servers, search engines, etc.)
+  ruby 2.6.3
+  rails 6.0.3
 
-* Deployment instructions
+# Note
 
-* ...
+# Author
+
+  * Yuuuuuuk
