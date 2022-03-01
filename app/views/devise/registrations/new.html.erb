@@ -25,11 +25,13 @@
       </div>
     <% end %>
     <p class="mb-3">
-      アカウントをお持ちですか？
+      アカウントをお持ちですか？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
       <%= link_to "ログインする", new_user_session_path %>
     </p>
     <div>
-      <%= link_to "Googleアカウントでログイン", user_google_oauth2_omniauth_authorize_path, method: :post %>
+      <%= link_to user_google_oauth2_omniauth_authorize_path, method: :post do %>
+        <i class="fab fa-google"></i> googleアカウントでログイン
+      <% end %>
     </div>
   </div>
 </div>

@@ -3,7 +3,8 @@
   <div class="col-md-6 text-center">
     <h1 class="logo">MonoLog</h1>
     <h2 class="mb-3">パスワードをお忘れですか?</h2>
-    <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+    <%= form_with scope: resource, as: resource_name, url: password_path(resource_name), local: true do |f| %>
+      <%= devise_error_messages! %>
       <div class="mb-3">
         <%= f.email_field :email, autofocus: true, placeholder: "メールアドレス", class: "form-control" %>
       </div>

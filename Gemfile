@@ -29,11 +29,11 @@ gem 'jbuilder', '2.9.1'
 gem 'bootsnap', '1.4.5', require: false
 gem 'devise'
 gem 'faker', '2.1.2'
-gem 'will_paginate', '~> 3.3'
-gem 'will_paginate-bootstrap-style'
+gem 'kaminari'
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
 gem 'omniauth-rails_csrf_protection'
+gem 'ransack'
 
 group :development, :test do
   gem 'sqlite3', '1.4.1'

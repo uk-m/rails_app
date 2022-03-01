@@ -18,29 +18,27 @@
       <div class="card-body">
         <p class="card-text"><%= simple_format(post.content) %></p>
       </div>
-      <div class="list-group list-group-flush">
-        <li class="list-group-item">
-          <span id="like-icon-post-<%= post.id.to_s %>">
-            <% if post.liked_by(current_user).present? %>
-              <%= link_to "いいねを取り消す", post_like_path(post.id, post.liked_by(current_user)), method: :DELETE, remote: true, class: "loved hide-text" %>
-            <% else %>
-              <%= link_to "いいね", post_likes_path(post), method: :POST, remote: true, class: "love hide-text" %>
-            <% end %>
-          </span>
-          <span>
-            <%= link_to post_path(post), class: "comment" do %>
-              <span class="fa-layers fa-fw bg fa-2x">
-                <i class="far fa-comment my-gray"></i>
-                <% if post.comments.any? %>
-                  <span class="fa-layers-counter" style="background: black;"><%= post.comments.count %></span>
-                <% end %>
-              </span>
-            <% end %>
-          </span>
-          <div id="like-text-post-<%= post.id.to_s %>">
-            <%= render "like_text", { likes: post.likes } %>
-          </div>
-        </li>
+      <div class="row">
+        <div class="col-auto", id="like-icon-post-<%= post.id.to_s %>">
+          <% if post.liked_by(current_user).present? %>
+            <%= link_to "いいねを取り消す", post_like_path(post.id, post.liked_by(current_user)), method: :DELETE, remote: true, class: "loved hide-text" %>
+          <% else %>
+            <%= link_to "いいね", post_likes_path(post), method: :POST, remote: true, class: "love hide-text" %>
+          <% end %>
+        </div>
+        <div class="col-auto">
+          <%= link_to post_path(post), class: "comment" do %>
+            <span class="fa-layers fa-fw bg fa-2x">
+              <i class="far fa-comment my-gray"></i>
+              <% if post.comments.any? %>
+                <span class="fa-layers-counter" style="background: black;"><%= post.comments.count %></span>
+              <% end %>
+            </span>
+          <% end %>
+        </div>
+        <div id="like-text-post-<%= post.id.to_s %>">
+          <%= render "like_text", { likes: post.likes } %>
+        </div>
       </div>
       <div class="card-footer">
         <small class="text-muted">
@@ -51,4 +49,4 @@
   </div>
   <% end %>
 </div>
-<%= will_paginate @posts %>
+<%= paginate @posts %>
