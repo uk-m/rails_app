@@ -21,6 +21,9 @@
         <P class="card-text">
           <%= simple_format(@post.content) %>
         </P>
+        <% @post.tags.each do |tag| %>
+          <span class="badge badge-primary"><%= tag.name %></span>
+        <% end %>
         <div class="comment-post-id">
           <div id="comment-post-<%= @post.id.to_s %>">
             <%= render 'comment_list', post: @post %>

@@ -20,3 +20,18 @@ following = users[2..50]
 followers = users[3..40]
 following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
+
+Tag.create([
+  { name: '家電' },
+  { name: 'パソコン' },
+  { name: 'カメラ' },
+  { name: 'スマートフォン' },
+  { name: '日用品' },
+  { name: 'ファッション' },
+  { name: '小物' },
+  { name: '趣味' },
+  { name: 'キッチン用品' },
+  { name: 'インテリア' },
+  { name: 'ゲーム' },
+  { name: 'ペット用品' }
+  ])
