@@ -23,7 +23,6 @@ class PostsController < ApplicationController
       redirect_to posts_path
       flash[:alert] = "投稿に失敗しました"
     end
-    redirect_to posts_path
   end
   
   def show
