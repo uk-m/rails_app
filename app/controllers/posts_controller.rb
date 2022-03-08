@@ -5,7 +5,8 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i(show destroy)
   
   def index
-    @posts = Post.page(params[:page]).per(8).order('updated_at DESC')
+    @posts = params[:tag_id].present? ? Tag.find(params[:tag_id]).posts : Post.all
+    @posts = @posts.page(params[:page]).per(8).order('updated_at DESC')
   end
   
   def new
