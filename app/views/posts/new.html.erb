@@ -13,7 +13,15 @@
         </div>
       </div>
       <div class="form-group">
-        <h3>タグ</h3>
+        <h3 class="m-3">カテゴリー</h3>
+        <%= f.collection_select :tag_id, Tag.all, :id, :name, prompt: "選択してください" %>
+      </div>
+      <%= f.submit "投稿する", class: "btn btn-primary m-3" %>
+    <% end %>
+  </div>
+</div>
+<%
+=begin %>
         <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
           <div class="form-check">
             <%= tag.label class: 'form-check-label form-check-inline' do %>
@@ -22,8 +30,5 @@
             <% end %>
           </div>
         <% end %>
-      </div>
-      <%= f.submit "投稿する", class: "btn btn-primary" %>
-    <% end %>
-  </div>
-</div>
+<%
+=end %>

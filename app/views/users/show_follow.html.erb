@@ -4,7 +4,7 @@
     <section class="user_info">
       <%= gravatar_for @user %>
       <span><%= link_to @user.name, user_path(@user) %></span>
-      <span><b>投稿数:</b> <%= @user.posts.count %></span>
+      <%= render 'follow_form' if current_user %>
     </section>
     <section class="profile-text">
       <%= simple_format(@user.self_introduction) %>

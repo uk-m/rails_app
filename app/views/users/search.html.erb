@@ -1,10 +1,16 @@
 <% provide(:title, '検索結果') %>
-<h1>検索結果</h1>
-<%= search_form_for @q, url: search_users_path, class: "input-group mb-5" do |f| %>
-  <span class="input-group-text">ユーザー名</span>
-  <%= f.search_field :name_cont, class: "form-control" %>
-  <%= f.submit '検索', class: "btn btn-outline-secondary" %>
-<% end %>
+<div class="row justify-content-end">
+  <div class="col-4">
+    <h1>検索結果</h1>
+  </div>
+  <div class="col-4">
+    <%= search_form_for @q, url: search_users_path, class: "input-group mt-3" do |f| %>
+      <span class="input-group-text">ユーザー名</span>
+      <%= f.search_field :name_cont, class: "form-control" %>
+      <%= f.submit '検索', class: "btn btn-outline-secondary" %>
+    <% end %>
+  </div>
+</div>
 <ul class="users">
   <%= render @users %>
 </ul>
