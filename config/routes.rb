@@ -18,4 +18,5 @@ Rails.application.routes.draw do
     resources :comments, only: %i(create destroy)
   end
   resources :relationships, only: %i(create destroy)
+  resources :chat_rooms, only: %i(create show)
 end

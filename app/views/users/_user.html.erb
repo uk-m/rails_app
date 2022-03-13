@@ -4,7 +4,7 @@
     <%= user.name %>
   <% end %>
   <% if current_user.admin? && current_user %>
-    <%= button_to "削除", user, class: "btn btn-outline-danger", method: :delete,
+    <%= button_to "削除", user, class: "btn btn-outline-danger btn-sm", method: :delete,
                         data: { confirm: "本当に削除してもよろしいですか？" } %>
   <% end %>
 </li>
