@@ -4,8 +4,10 @@
     <section class="user_info">
       <%= gravatar_for @user %>
       <%= @user.name %>
-      <%= link_to chat_rooms_path(params: { user_id: @user.id }), method: :post do %>
-        <i class="far fa-envelope"></i>
+      <% if @user != current_user %>
+        <%= link_to chat_rooms_path(params: { user_id: @user.id }), method: :post do %>
+          <i class="far fa-envelope"></i>
+        <% end %>
       <% end %>
       <%= render 'follow_form' if current_user %>
       <% if @user == current_user %>

@@ -1,0 +1,23 @@
+<% provide(:title, 'チャット') %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <%= gravatar_for @chat_room_user %>
+      <%= @chat_room_user.name %>
+    </section>
+    <section class="profile-text">
+      <%= simple_format(@chat_room_user.self_introduction) %>
+    </section>
+  </aside>
+  <div class="col-md-8">
+    <%= link_to user_path(@chat_room_user) do %>
+      <i class="fas fa-angle-left fa-lg"></i> 戻る
+    <% end %>
+    <div>
+      <%= render @chat_messages %>
+    </div>
+    <form class="align-items-end">
+      <input data-behavior="chat_room_speaker" class="form-control" type="text" id="<%= @chat_room.id %>" placeholder="メッセージを入力">
+    </form>
+  </div>
+</div>
