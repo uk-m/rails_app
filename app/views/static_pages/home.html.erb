@@ -7,10 +7,17 @@
       <p>みんなのおすすめの商品を見てみよう。あなたのお気に入りの物を紹介しよう。  <i class="fas fa-camera"></i></p>
     </div>
     <div class="col-lg">
-      <P>アカウントをお持ちでない場合</P>
-      <%= link_to "新規登録", new_user_registration_path, class: "btn btn-primary" %>
-      <p>アカウントをお持ちの場合</p>
-      <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-primary" %>
+      <% if user_signed_in? %>
+        <p>みんなの投稿を見てみる</p>
+        <%= link_to "投稿一覧", posts_path, class: "btn btn-primary" %>
+        <p>あなたのお気に入りの物を投稿しよう</p>
+        <%= link_to "投稿する", new_post_path, class: "btn btn-outline-primary" %>
+      <% else %>
+        <P>アカウントをお持ちでない場合</P>
+        <%= link_to "新規登録", new_user_registration_path, class: "btn btn-primary" %>
+        <p>アカウントをお持ちの場合</p>
+        <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-primary" %>
+      <% end %>
     </div>
   </div>
 </div>

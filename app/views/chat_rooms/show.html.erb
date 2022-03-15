@@ -10,14 +10,16 @@
     </section>
   </aside>
   <div class="col-md-8">
-    <%= link_to user_path(@chat_room_user) do %>
-      <i class="fas fa-angle-left fa-lg"></i> 戻る
-    <% end %>
-    <div>
+    <div class="mt-3">
+       <%= link_to user_path(@chat_room_user) do %>
+        <i class="fas fa-angle-left fa-lg"></i> 戻る
+      <% end %>
+    </div>
+    <div id="chat-messages">
       <%= render @chat_messages %>
     </div>
-    <form class="align-items-end">
-      <input data-behavior="chat_room_speaker" class="form-control" type="text" id="<%= @chat_room.id %>" placeholder="メッセージを入力">
+    <form class="chat-room__message-form">
+      <input data-behavior="chat_room_speaker" data-chat_room_id="<%= @chat_room.id %>" placeholder="メッセージを入力" class="form-control chat-room__message-form_textarea">
     </form>
   </div>
 </div>

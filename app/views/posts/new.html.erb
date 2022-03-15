@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="form-group">
-        <h3 class="m-3">カテゴリー</h3>
+        <h3 class="m-3">タグ</h3>
         <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %>
           <div class="form-check">
             <%= tag.label class: 'form-check-label form-check-inline' do %>

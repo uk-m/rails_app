@@ -6,7 +6,7 @@
   
 # Overview
 
-  Purchase introduction services
+  Purchase introduction services.
 
 # DEMO
 
@@ -16,6 +16,8 @@
 
 # Usage
 
+  git clone https://github.com/uk-m/rails_app.git
+
 # Requirement
 
   ruby 2.6.3
@@ -23,6 +25,8 @@
 
 # Note
 
+  Please sign up.
+
 # Author
 
-  * Yuuuuuuk
+  * Yuki

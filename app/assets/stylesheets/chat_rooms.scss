@@ -1,3 +1,24 @@
-// Place all the styles related to the chat_rooms controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.chat-message {
+  &__partner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  &__content {
+    margin: 4px 8px 4px;
+    padding: 8px 12px;
+    max-width: 70%;
+    font-size: 16px;
+    border-radius: 8px;
+    background: #ddd;
+  }
+  &__current-user {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+
+.bg-color {
+  background: #72aaaa;
+  color: #fff;
+}
