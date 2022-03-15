@@ -14,7 +14,7 @@
   
 # Features
 
-  You can watch everyone purchase.
+  You can watch everyone purchased products.
 
 # Usage
 
@@ -22,7 +22,7 @@
 
 # Requirement
 
-  ruby 2.6.3
+  ruby 2.6.8
   rails 6.0.3
 
 # Note
