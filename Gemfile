@@ -23,7 +23,7 @@ gem 'jbuilder', '2.9.1'
 # gem 'image_processing', '~> 1.2'
 
 # Reduces boot times through caching; required in config/boot.rb
-gem 'bootsnap', '1.4.5', require: false
+gem 'bootsnap', '~> 1.4', require: false
 gem 'devise'
 gem 'faker', '2.1.2'
 gem 'kaminari'
