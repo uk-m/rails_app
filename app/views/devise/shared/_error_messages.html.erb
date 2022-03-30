@@ -1,12 +1,7 @@
 <% if resource.errors.any? %>
   <div id="error_explanation">
     <h2 class="alert alert-danger">
-      エラーが発生しました
+      正しい情報を入力してください
     </h2>
-    <ul>
-      <% resource.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
   </div>
 <% end %>
