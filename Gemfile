@@ -33,6 +33,8 @@ gem 'omniauth-rails_csrf_protection'
 gem 'ransack'
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
+gem 'fog-aws'
+gem "aws-sdk-s3", require: false 
 
 group :development, :test do
   gem 'sqlite3', '1.4.1'
