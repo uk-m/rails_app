@@ -8,7 +8,7 @@ User.create!(name: "Example User",
   name  = Faker::Name.name
   email = "example-#{n+1}@mail"
   password = "password"
-  User.create!(id: n+1,
+  User.create!(user_id: n+1,
                name: name,
                email: email,
                password: password,
@@ -23,17 +23,17 @@ following.each { |followed| user.follow(followed) }
 followers.each { |follower| follower.follow(user) }
 
 Tag.create!([
-  { id: 1, name: '家電' },
-  { id: 2, name: 'パソコン' },
-  { id: 3, name: 'カメラ' },
-  { id: 4, name: 'スマートフォン' },
-  { id: 5, name: '生活' },
-  { id: 6, name: 'ファッション' },
-  { id: 7, name: '小物' },
-  { id: 8, name: '趣味' },
-  { id: 9, name: 'キッチン' },
-  { id: 10, name: 'インテリア' },
-  { id: 11, name: 'ゲーム' },
-  { id: 12, name: 'ペット' },
-  { id: 13, name: '植物' }
+  { tag_id: 1, name: '家電' },
+  { tag_id: 2, name: 'パソコン' },
+  { tag_id: 3, name: 'カメラ' },
+  { tag_id: 4, name: 'スマートフォン' },
+  { tag_id: 5, name: '生活' },
+  { tag_id: 6, name: 'ファッション' },
+  { tag_id: 7, name: '小物' },
+  { tag_id: 8, name: '趣味' },
+  { tag_id: 9, name: 'キッチン' },
+  { tag_id: 10, name: 'インテリア' },
+  { tag_id: 11, name: 'ゲーム' },
+  { tag_id: 12, name: 'ペット' },
+  { tag_id: 13, name: '植物' }
   ])
