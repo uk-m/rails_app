@@ -22,6 +22,13 @@ class User < ApplicationRecord
   validates :name, presence: true, length: { maximum: 20 }
   validates :self_introduction, length: { maximum: 100 }
   
+  def self.guest
+    find_or_create_by!(email: 'guest@example.com') do |user|
+      user.password = SecureRandom.urlsafe_base64
+      user.name = "ゲスト"
+    end
+  end
+  
   def follow(other_user)
     following << other_user
   end

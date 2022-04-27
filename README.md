@@ -6,11 +6,11 @@
   
 # Overview
 
-  Purchase introduction services.
+  Recommended products introduction services.
 
 # DEMO
 
-  https://git.heroku.com/aqueous-island-99964.git
+  https://git.heroku.com/monolog-99964.git
   
 # Features
 

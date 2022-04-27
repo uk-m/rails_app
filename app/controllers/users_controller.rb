@@ -1,7 +1,16 @@
 class UsersController < ApplicationController
   
-  before_action :set_q, only: [:index, :search]
+  before_action :set_q, only: %i(index search)
+  
+  before_action :ensure_normal_user, only: :destroy
 
+  def ensure_normal_user
+     @user = User.find_by(id: params[:id])
+    if @user.email == 'guest@example.com'
+      redirect_to root_path, alert: 'ゲストユーザーは削除できません。'
+    end
+  end
+  
   def index
     @users = User.page(params[:page]).per(12)
   end

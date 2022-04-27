@@ -17,6 +17,8 @@
         <%= link_to "新規登録", new_user_registration_path, class: "btn btn-primary" %>
         <p>アカウントをお持ちの場合</p>
         <%= link_to "ログイン", new_user_session_path, class: "btn btn-outline-primary" %>
+        <p>登録なしで覗いてみる</p>
+        <%= link_to "ゲストログイン（閲覧用）", users_guest_sign_in_path, method: :post, class: "btn btn-secondary" %>
       <% end %>
     </div>
   </div>

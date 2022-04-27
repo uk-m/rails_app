@@ -34,7 +34,7 @@ gem 'ransack'
 gem 'carrierwave', '~> 2.0'
 gem 'mini_magick'
 gem 'fog-aws'
-gem "aws-sdk-s3", require: false 
+gem 'aws-sdk-s3', require: false 
 
 group :development, :test do
   gem 'sqlite3', '1.4.1'
@@ -42,6 +42,9 @@ group :development, :test do
   gem 'byebug', '11.0.1', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'bullet'
 end
 
 group :development do
